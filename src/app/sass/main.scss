@@ -1,2 +1,8 @@
 @import "base/variables";
 @import "base/global";
+
+// PAGES
+@import "pages/home.scss";
+
+// COMPONENTS   
+@import "components/dialog-form";
