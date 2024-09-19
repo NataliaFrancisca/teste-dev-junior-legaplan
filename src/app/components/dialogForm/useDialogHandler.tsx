@@ -1,11 +1,9 @@
-import { DialogFormContext } from "@/app/context/DialogFormContext";
 import { saveUserName } from "@/app/storage/storage";
-import { FormEvent, useContext, useEffect, useRef, useState } from "react"
+import { FormEvent, useEffect, useRef, useState } from "react"
 
 export const useDialogFormHandler = () => {
     const [userName, setUserName] = useState<null | string>(null);
     const dialogRef = useRef<HTMLDialogElement>(null);
-    const { setIsOpen } = useContext(DialogFormContext);
 
     const onSubmitForm = async(e: FormEvent) => {
         e.preventDefault();
@@ -13,8 +11,6 @@ export const useDialogFormHandler = () => {
         if(userName){
             await saveUserName(userName);
         }
-
-        setIsOpen(false);
     }
 
     useEffect(() => {
