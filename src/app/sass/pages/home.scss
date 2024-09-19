@@ -1,0 +1,37 @@
+#page__home{
+    display: flex;
+    width: 100vw;
+    height: auto;
+
+    header{
+        width: 100%;
+        margin: 0px 56px;
+        border-bottom: #D7DDE9 1px solid;
+
+        nav{
+            display: flex;
+            justify-content: space-between;
+            padding: 24px 0;
+        }
+
+        p{
+            font-size: 24px;
+        }
+
+        span{
+            font-size: 16px;
+            font-weight: 400;
+            color: #0000008A;
+        }
+
+        @media screen and (max-width: 992px){
+
+            nav{
+                flex-direction: column;
+                height: auto;
+                gap: 8px;
+            }
+           
+        }
+    }
+}
