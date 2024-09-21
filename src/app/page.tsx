@@ -1,24 +1,31 @@
 'use server';
 import Image from "next/image";
-import DialogForm from "./components/dialogForm/DialogForm";
+
+import { getTasks } from "./storage/tasks";
 import { getUserName } from "./storage/storage";
 import { getFormattedCurrentDate } from "./utils/date-formatted";
 
-export default async function Home() {
+import Tasks from "./components/Tasks/Tasks";
+import DialogUserName from "./components/Dialog/DialogUserName";
 
+export default async function Home() {
   const userName = await getUserName();
   const date = getFormattedCurrentDate();
+  const tasks = await getTasks();
 
   return (
     <main id="page__home">
-      {!userName && <DialogForm />}
+      {!userName && <DialogUserName />}
+
       <header>
         <nav>
           <Image src="logo.svg" alt="company logo" height={36} width={150} />
-          {userName && <p>Bem-vindo de volta, {userName}</p>}
-          <span>{date}</span>
+          {userName && <p className="p__message">Bem-vindo de volta, <span className="span__styled">{userName}</span></p>}
+          <span className="span__date">{date}</span>
         </nav>
       </header>
+      
+      {tasks && <Tasks tasks={tasks} />}
     </main>
   );
 }

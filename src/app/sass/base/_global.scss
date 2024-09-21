@@ -7,3 +7,24 @@
     font-family: $font-primary;
 }
 
+button{
+    cursor: pointer;
+    padding: 16px 0;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 8px;
+    color: $white-color;
+
+    &.btn__grey{
+        background: #E7EEFB;
+        color: $black-color;
+    }
+
+    &.btn__blue{
+        background: $gradient-blue;
+    }
+
+    &.btn__red{
+        background: $gradient-red;
+    }
+}
