@@ -19,7 +19,10 @@ export async function saveTasks(task: TTask, type: ETaskType){
     const tasks = await getTasks();
 
     if(tasks){
-        let updated;
+        let updated: TStorageTasks = {
+            checked: [],
+            unchecked: []
+        };
 
         if(type == ETaskType.UNCHECKED){
             const unchecked = [...tasks.unchecked, task];
@@ -49,7 +52,7 @@ export async function deleteTask(task: TTask, type: ETaskType){
     const tasks = await getTasks();
 
     if(tasks){
-        let updated = {
+        const updated = {
             checked: [...tasks.checked],
             unchecked: [...tasks.unchecked]
         }
