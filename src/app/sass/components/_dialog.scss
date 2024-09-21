@@ -1,0 +1,62 @@
+dialog.component__dialog{
+    background-color: $white-color;
+    box-shadow: $box-shadow;
+    border-radius: 10px;
+    width: 450px;
+    margin: auto;
+    padding: 32px;
+
+    &::backdrop {
+        background-color: rgba(255 255 255 / 0.90);
+        opacity: 1;
+    }
+
+    & form{
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+
+        legend{
+            font-size: 24px;
+            font-weight: 500;
+        }
+
+        fieldset{
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+
+            label{
+                font-size: 16px;
+                font-weight: 400;
+            }
+
+            input{
+                font-size: 16px;
+                border: solid #D7DDE9 1px;
+                padding: 16px;
+                border-radius: 8px;
+            }
+        }
+
+        div.group__button{
+            display: flex;
+            gap: 16px;
+        }
+    }
+
+    @media screen and (max-width: 576px){
+        margin: 0 auto;
+        box-shadow: none;
+
+        &::backdrop {
+            background-color: rgba(255 255 255 / 1);
+        }
+
+        form{
+            div.group__button{
+                flex-direction: column-reverse;
+            }
+        }
+    }
+}
