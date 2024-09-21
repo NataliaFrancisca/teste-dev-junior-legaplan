@@ -19,7 +19,7 @@ const DialogCreateTask = () => {
 
         if(task){
             const new_task = {   
-                id: Math.floor(Math.random() * 100),
+                id: Math.floor(Math.random() * 100) * Math.floor(Math.random() * 100),
                 value: task
             }
 
